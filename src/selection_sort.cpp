@@ -1,4 +1,5 @@
 #include "./selection_sort.h"
+#include <utility>
 
 void selectionSort(std::vector<int> &array) {
 
@@ -8,9 +9,7 @@ void selectionSort(std::vector<int> &array) {
       int compareElement{array.at(j)};
 
       if (compareElement <= currentElement) {
-        int temp{array[i]};
-        array[i] = array[j];
-        array[j] = temp;
+        std::swap(array[i], array[j]);
         currentElement = array.at(i);
       }
     }
