@@ -1,5 +1,4 @@
 #include "insertion_sort.h"
-#include <utility>
 
 void insertionSort(std::vector<int> &array) {
   for (int i{1}; i < array.size(); ++i) {
