@@ -10,3 +10,17 @@ void bubbleSort(std::vector<int> &array) {
     }
   }
 }
+
+void bubbleSortRecursive(std::vector<int> &array, int end) {
+
+  if (end <= 1) {
+    return;
+  }
+
+  for (int j{}; j + 1 < end; ++j) {
+    if (array[j] > array[j + 1]) {
+      std::swap(array[j], array[j + 1]);
+    }
+  }
+  bubbleSortRecursive(array, end - 1);
+}

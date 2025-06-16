@@ -3,5 +3,6 @@
 
 #include <vector>
 void insertionSort(std::vector<int> &array);
+void insertionSortRecursive(std::vector<int> &array, int posOfCurrElement);
 
 #endif

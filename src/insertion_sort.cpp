@@ -19,3 +19,17 @@ void insertionSort(std::vector<int> &array) {
     array[j + 1] = currentElement;
   }
 }
+
+void insertionSortRecursive(std::vector<int> &array, int posOfCurrElement) {
+  int currentElement{array[posOfCurrElement]};
+
+  int j{posOfCurrElement - 1};
+
+  while (j >= 0 && array[j] > currentElement) {
+    array[j + 1] = array[j];
+    --j;
+  }
+
+  array[j + 1] = currentElement;
+  insertionSortRecursive(array, posOfCurrElement + 1);
+}
