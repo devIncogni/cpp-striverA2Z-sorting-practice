@@ -36,3 +36,40 @@ void mergeSort(std::vector<int> &array) {
   array.insert(array.end(), tempV1.begin() + posV1, tempV1.end());
   array.insert(array.end(), tempV2.begin() + posV2, tempV2.end());
 }
+
+void merge(std::vector<int> &array, int left, int mid, int right) {
+
+  std::vector<int> Left, Right;
+  Left.assign(array.begin() + left, array.begin() + mid + 1);
+  Right.assign(array.begin() + mid + 1, array.begin() + right + 1);
+
+  int l{0}, r{0}, i{left};
+  while (l < Left.size() && r < Right.size()) {
+    if (Left[l] < Right[r]) {
+      array[i++] = Left[l++];
+    } else {
+      array[i++] = Right[r++];
+    }
+  }
+
+  while (l < Left.size()) {
+    array[i++] = Left[l++];
+  }
+
+  while (r < Right.size()) {
+    array[i++] = Right[r++];
+  }
+}
+
+void mergeSort(std::vector<int> &array, int left, int right) {
+
+  if (left >= right) {
+    return;
+  }
+
+  int mid{(left + right) / 2};
+
+  mergeSort(array, left, mid);
+  mergeSort(array, mid + 1, right);
+  merge(array, left, mid, right);
+}
