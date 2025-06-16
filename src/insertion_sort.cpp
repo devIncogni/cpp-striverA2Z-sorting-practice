@@ -21,6 +21,11 @@ void insertionSort(std::vector<int> &array) {
 }
 
 void insertionSortRecursive(std::vector<int> &array, int posOfCurrElement) {
+
+  if (posOfCurrElement >= array.size()) {
+    return;
+  }
+
   int currentElement{array[posOfCurrElement]};
 
   int j{posOfCurrElement - 1};
