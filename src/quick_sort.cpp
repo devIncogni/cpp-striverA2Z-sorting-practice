@@ -1,5 +1,4 @@
 #include "quick_sort.h"
-#include <iostream>
 #include <utility>
 void quickSort(std::vector<int> &array, int leftLarge, int rightSmall) {
   int leftLargeCopy{leftLarge};
