@@ -1,6 +1,8 @@
 #include "quick_sort.h"
 #include <utility>
+
 void quickSort(std::vector<int> &array, int leftLarge, int rightSmall) {
+
   int leftLargeCopy{leftLarge};
   int rightSmallCopy{rightSmall};
 
@@ -62,4 +64,3 @@ void quickSort2(std::vector<int> &array, int leftLarge, int rightSmall) {
   quickSort2(array, leftLarge, pivotIndex - 1);
   quickSort2(array, pivotIndex + 1, rightSmall);
 }
-// 3 6 2 9 7 1 2 0
